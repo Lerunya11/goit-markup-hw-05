@@ -561,15 +561,16 @@ p {
 
 /* #endregion Portfolio Section */
 
-
-
+/* #region Footer Section */
 
 .footer {
   background-color: var(--navy-blue);
   padding-top: 100px;
   padding-bottom: 100px;
 }
-
+.footer-label {
+  display: block;
+}
 
 .footer-container {
   display: flex;
@@ -690,18 +691,19 @@ p {
   width: 264px;
   height: 40px;
   padding-left: 16px;
-  border: 1px solid var(--white);
+  border: 1px solid #ffffff;
   border-radius: 4px;
   background-color: transparent;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 2;
   letter-spacing: 0.04em;
-  color: var(--white);
+  color: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
 }
 
-
 .footer-input::placeholder {
-  color: var(--white);
+  color: #ffffff;
 }
 
 
@@ -719,19 +721,24 @@ p {
   line-height: 1.5;
   letter-spacing: 0.04em;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 165px;
+  height: 40px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
 .footer-subscribe-button:hover,
 .footer-subscribe-button:focus {
-  background-color: var(--green);
+  background-color: #404bbf;
+    border: none;
 }
 
 
-.footer-subscribe-icon {
-  fill: var(--white);
-  margin-left: 16px;
+.footer-subscribe-button:hover .footer-subscribe-icon,
+.footer-subscribe-button:focus .footer-subscribe-icon {
+  fill: #ffffff;
+  /* 👈 Иконка внутри кнопки */
 }
 /* #region Modal */
 
@@ -816,7 +823,7 @@ p {
 .modal-form {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 24px;
 }
 
 .form-field {
@@ -907,20 +914,20 @@ p {
 }
 
 .checkbox-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 16px;
   height: 16px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 2px;
-  margin-right: 8px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  fill: transparent;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: transparent;
 }
 
+/* Стили для состояния checked */
 .checkbox-input:checked+.checkbox-label .checkbox-custom {
   background-color: var(--ocean);
   border: none;
@@ -940,6 +947,7 @@ p {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
+  letter-spacing: 0.04em;
   color: var(--white);
   background-color: var(--iris);
   border: none;
