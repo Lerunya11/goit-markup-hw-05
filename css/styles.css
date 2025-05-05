@@ -943,6 +943,7 @@ transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
   color: var(--iris);
 }
 
+/* ===== КНОПКА ОТПРАВКИ В МОДАЛЬНОМ ОКНЕ ===== */
 .form-submit-button {
   display: block;
   min-width: 169px;
@@ -958,22 +959,24 @@ transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* 1‑й и 2‑й пункты: hover = #404bbf + border:none */
+/* 3‑й и 4‑й пункты: focus = #404bbf + border:none */
 .form-submit-button:hover,
 .form-submit-button:focus {
   background-color: #404bbf;
-  border: none;  
-  }
-    .form-submit-button:hover .form-submit-icon,
-    .form-submit-button:focus .form-submit-icon {
-      fill: #ffffff;
-    }
-.form-submit-button:hover,
-.form-submit-button:focus {
-  background-color: #404bbf;
+  /* требуемый цвет */
   border: none;
+  /* обнуляем бордер */
+}
+
+/* Изменяем цвет иконки внутри кнопки при hover/focus */
+.form-submit-button:hover .form-submit-icon,
+.form-submit-button:focus .form-submit-icon {
+  fill: #ffffff;
 }
 
 /* 1. Кнопка закрытия (hover / focus) — фон и border */
