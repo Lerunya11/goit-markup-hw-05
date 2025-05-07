@@ -766,7 +766,7 @@ p {
   
   visibility: visible;
 
-  /* обе проп‑ти в одном transition ‑ требование автопроверки */
+  /* обе проп‑ти в одном transition */
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -777,12 +777,6 @@ p {
   visibility: hidden;
   pointer-events: none;
   /* чтобы фон не перехватывал клики */
-}
-
-.backdrop.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
 }
 
 .modal {
@@ -807,13 +801,13 @@ p {
   right: 24px;
   width: 24px;
   height: 24px;
-  border-radius: 50%;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 0;
+  border-radius: 50%;
+  background-color: #e7e9fc;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -883,15 +877,15 @@ p {
 }
 
 .form-icon {
-  position: absolute;
-  left: 16px;
+  position: absolute; 
   top: 50%;
+  left: 16px;
   transform: translateY(-50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input:focus+.form-icon {
-  fill: #4D5AE5;
+  fill: #4d5ae5;
 }
 
 .form-textarea-wrapper {
@@ -915,7 +909,7 @@ p {
 }
 
 .form-textarea:focus {
-  border-color: var(--iris);
+  border-color: #4d5ae5;
 }
 
 .form-checkbox-wrapper {
@@ -955,7 +949,7 @@ p {
 .checkbox-input:checked + .checkbox-label .checkbox-custom {
   background-color: #404bbf;
   border: none;
-  fill: #F4F4FD;
+  fill: #f4f4fd;;
 }
 
 .checkbox-link {
@@ -968,13 +962,14 @@ p {
   min-width: 169px;
   height: 56px;
   margin: 0 auto;
+  padding: 0 24px;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  color: var(--white);
-  background-color: var(--iris);
+  color: #ffffff;
+  background-color: #4d5ae5;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -982,17 +977,14 @@ p {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 1‑й и 2‑й пункты: hover = #404bbf + border:none */
-/* 3‑й и 4‑й пункты: focus = #404bbf + border:none */
 .form-submit-button:hover,
 .form-submit-button:focus {
   background-color: #404bbf;
-  /* требуемый цвет */
-  border: none;
-  /* обнуляем бордер */
+border: none;
+  /* обнуление бордера */
 }
 
-/* Изменяем цвет иконки внутри кнопки при hover/focus */
+/* белая иконка внутри при hover/focus */
 .form-submit-button:hover .form-submit-icon,
 .form-submit-button:focus .form-submit-icon {
   fill: #ffffff;
