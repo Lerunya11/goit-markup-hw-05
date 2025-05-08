@@ -1012,18 +1012,18 @@ border: none;
 
 /* 3. Поле input (рамка при фокусе) */
 .form-input:focus {
-  border-color: #4d5ae5;
+  border-color: #4D5AE5;
   /* цвет рамки при фокусе */
 }
 
 /* 4. Иконка слева в input → синий при фокусе */
 .form-input:focus+.form-icon {
-  fill: #4d5ae5;
+  fill: #4D5AE5;
 }
 
 /* 5. Поле textarea (рамка при фокусе) */
 .form-textarea:focus {
-  border-color: #4d5ae5;
+  border-color: #4D5AE5;
 }
 
 /* 6. span кастомного чекбокса – inline‑flex (позиционирование) */
