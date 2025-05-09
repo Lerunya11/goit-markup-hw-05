@@ -751,24 +751,17 @@ p {
 /* ---------- BACKDROP (приглушённый фон модального окна) ---------- */
 
 .backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-
-  background-color: rgba(46, 47, 66, 0.4);
-  /* полупрозрачный тёмный фон */
-  z-index: 999;
-
-  /* анимация плавного появления / исчезновения */
-  opacity: 1;
-  
-  visibility: visible;
-
-  /* обе проп‑ти в одном transition */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /* Скрытое состояние (добавляется/снимается JS‑ом) */
@@ -810,8 +803,6 @@ p {
 }
 
 .modal-form {
-  display: flex;
-  flex-direction: column;
   gap: 24px;
 }
 
@@ -880,7 +871,7 @@ p {
 }
 
 .form-textarea:focus {
-  border-color: #4d5ae5;
+  border-color: #4D5AE5;
 }
 
 .form-checkbox-wrapper {
@@ -994,7 +985,6 @@ border: none;
   background-color: #404BBF;
   /* требуемый цвет */
   border: none;
-  /* убираем рамку */
 }
 
 /* Белая иконка‑крестик при hover / focus */
