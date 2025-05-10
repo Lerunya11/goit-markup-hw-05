@@ -755,9 +755,10 @@ p {
   top: 0;
   left: 0;
   height: 100%;
+  width: 100%;
   background-color: rgba(46, 47, 66, 0.4);
 
-  
+
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -958,8 +959,9 @@ p {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-submit-button:hover,
@@ -1039,10 +1041,10 @@ border: none;
   border-color: #4D5AE5;
 }
 
-/* 6. span кастомного чекбокса – inline‑flex (позиционирование) */
+/* 6. span кастомного чекбокса – inline‑flex (позиционирование)
 .checkbox-custom {
   display: inline-flex;
-}
+} */
 
 /* 7. Стили, когда чекбокс отмечен */
 .checkbox-input:checked+.checkbox-label .checkbox-custom {
